@@ -6,13 +6,13 @@ from django.core.paginator import Paginator
 
 # Create homepage
 def home(request):
-	# API Key: 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
+	
 	# Check for form submission 
 	if request.method == "POST":
 		question = request.POST['question']
 		past_responses = request.POST['past_responses']
 		#API Stuff
-		openai.api_key = "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"
+		openai.api_key = "sk-xyz"
 
 		#create OpenAI instance
 		openai.Model.list()
