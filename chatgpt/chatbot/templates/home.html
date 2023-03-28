@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% if question %}
+	<h3>Question: {{question}}</h3>
+	<br/>
+{% endif %}
+
+<div class="card">
+  <div class="card-header">
+    ChatGPT Response
+  </div>
+  <div class="card-body">
+  	{% if response %}
+  		{{ past_responses|safe }}
+
+  	{% endif %}
+    <br/><br/>
+  </div>
+</div>
+
+{% if past_responses %}
+
+<div><br/><br/>
+  <form method=POST action="{% url 'home' %}">
+  	{% csrf_token %}
+  <div>
+  	<input type="hidden" name="past_responses" value="{{past_responses}}">
+  </div>
+  <div class="mb-3">
+    <input type="text" class="form-control" placeholder="Ask ChatGPT a question." name="question">
+    
+  <button type="submit" class="btn btn-secondary">Submit</button>
+</form>
+  </div>
+
+
+{% else %}
+<div><br/><br/>
+  <form method=POST action="{% url 'home' %}">
+  	{% csrf_token %}
+	  <div>
+	  	<input type="hidden" name="past_responses" value="3ff11c8f-bc21-4f6f-a8a9-a02bb2caae52">
+	  </div>
+  <div class="mb-3">
+    <input type="text" class="form-control" placeholder="Ask ChatGPT a question." name="question">
+    
+  <button type="submit" class="btn btn-secondary">Submit</button>
+</form>
+  </div>
+{% endif %}
+{% endblock %}
