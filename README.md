@@ -1,7 +1,9 @@
 <pre>
 # POC Chatbot using ChatGPT API
 
-This repository contains a proof-of-concept (POC) chatbot built using the ChatGPT API, Django, and Python. The purpose of this project is to demonstrate how to create a simple yet effective chatbot using the OpenAI ChatGPT API and integrate it into a web application built on the Django framework.
+This repository contains a proof-of-concept (POC) chatbot built using the ChatGPT API, Django, and Python. 
+The purpose of this project is to demonstrate how to create a simple yet effective chatbot using the OpenAI 
+ChatGPT API and integrate it into a web application built on the Django framework.
 
 ## Features
 
